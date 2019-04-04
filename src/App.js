@@ -54,14 +54,21 @@ class App extends Component {
         <br />
         <div className="ui container">
           <h2>Lottery Contract</h2>
+          <br />
           <p>
-            This contract is managed by {this.state.manager}. There are
-            currently {this.state.players.length} people entered, competing to
-            win {web3.utils.fromWei(this.state.balance, 'ether')} ether!
+            This is a simple Lottery App built on the Rinkeby Test Ethereum
+            Network. You will need the Metamask browser extension to interact
+            with this app.
           </p>
-
+          <br />
+          <p>This contract is managed by {this.state.manager}.</p>
+          <br />
+          <p>
+            There are currently {this.state.players.length} people entered,
+            competing to win {web3.utils.fromWei(this.state.balance, 'ether')}{' '}
+            ether!
+          </p>
           <hr />
-
           <form onSubmit={this.onSubmit}>
             <h4>Want to try your luck?</h4>
             <div>
@@ -77,16 +84,12 @@ class App extends Component {
             </div>
             <button className="ui button">Enter</button>
           </form>
-
           <hr />
-
           <h4>Ready to pick a winner?</h4>
           <button className="ui button" onClick={this.onClick}>
             Pick a winner!
           </button>
-
           <hr />
-
           <h1>{this.state.message}</h1>
         </div>
       </div>
